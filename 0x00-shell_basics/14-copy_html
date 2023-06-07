@@ -1,3 +1,2 @@
-quiz 14
 #!/bin/bash
-cp –u *.html ..
+cp –ur *.html ..
