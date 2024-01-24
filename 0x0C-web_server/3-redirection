@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 # Function to install Nginx web server (reuse from 1-install_nginx_web_server)
 install_nginx() {
