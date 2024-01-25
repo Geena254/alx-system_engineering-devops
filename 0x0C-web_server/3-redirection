@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
+# Configure your Nginx server so that /redirect_me is redirecting to another page
 
 # Function to install Nginx web server (reuse from 1-install_nginx_web_server)
 install_nginx() {
