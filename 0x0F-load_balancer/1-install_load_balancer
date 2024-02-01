@@ -1,0 +1,25 @@
+nd install HAProxy on my lb-01 server as a load balancer.
+
+sudo apt-get update
+sudo apt-get -y install haproxy
+
+# Configure HAProxy
+server_config=\
+"
+frontend Georgina-frotend
+    bind *:80
+    mode http
+    default_backend web_servers
+
+backend web_servers
+    balance roundrobin
+    server 443869-web-01 100.25.180.98:80 check
+    server 443869-web-02 100.26.133.223:80 check
+"
+echo "$server_config" | sudo tee -a /etc/haproxy/haproxy.cfg
+
+# Enable HAProxy to be managed via init script
+echo "ENABLED=1" | sudo tee -a /etc/default/haproxy
+
+# Restart HAProxy service
+sudo service haproxy restart
