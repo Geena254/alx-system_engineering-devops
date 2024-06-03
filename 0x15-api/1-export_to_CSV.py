@@ -1,6 +1,6 @@
 #!/usr/bin/python3
-"""Accessing a REST API and returning information about todo lists of employees,
-   then exporting the data in CSV format.
+"""Accessing a REST API and returning information about todo lists of
+   employee then exporting the data in CSV format.
 """
 
 import requests
@@ -19,8 +19,8 @@ if __name__ == '__main__':
     response = requests.get(todoUrl)
     tasks = response.json()
 
-    with open('{}.csv'.format(employeeID), 'w') as file: # Create CSV file
-        for task in tasks: # Export task data to CSV
+    with open('{}.csv'.format(employeeID), 'w') as file:  # Create CSV file
+        for task in tasks:  # Export task data to CSV
             file.write('"{}","{}","{}","{}"\n'
                        .format(employeeID, username, task.get('completed'),
                                task.get('title')))

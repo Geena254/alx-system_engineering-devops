@@ -1,6 +1,6 @@
 #!/usr/bin/python3
-"""Accessing a REST API and returning information about todo lists of employees,
-   then exporting the data in JSON format.
+"""Accessing a REST API and returning information about todo lists of
+   employees then exporting the data in JSON format.
 """
 
 import json
